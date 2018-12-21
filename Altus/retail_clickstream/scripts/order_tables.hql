@@ -1,11 +1,12 @@
-set products='adl://azureeastus2data.azuredatalakestore.net/altus-retail-demo/warehouse/s3_products/';
-set order_items='adl://azureeastus2data.azuredatalakestore.net/altus-retail-demo/warehouse/s3_order_items';
-set orders='adl://azureeastus2data.azuredatalakestore.net/altus-retail-demo/warehouse/s3_orders';
-set customers='adl://azureeastus2data.azuredatalakestore.net/altus-retail-demo/warehouse/s3_customers';
-set categories='adl://azureeastus2data.azuredatalakestore.net/altus-retail-demo/warehouse/s3_categories';
-set departments='adl://azureeastus2data.azuredatalakestore.net/altus-retail-demo/warehouse/s3_departments';
+set products='adl://azureeastus2data.azuredatalakestore.net/altus-retail-demo/warehouse/products';
+set order_items='adl://azureeastus2data.azuredatalakestore.net/altus-retail-demo/warehouse/order_items';
+set orders='adl://azureeastus2data.azuredatalakestore.net/altus-retail-demo/warehouse/orders';
+set customers='adl://azureeastus2data.azuredatalakestore.net/altus-retail-demo/warehouse/customers';
+set categories='adl://azureeastus2data.azuredatalakestore.net/altus-retail-demo/warehouse/categories';
+set departments='adl://azureeastus2data.azuredatalakestore.net/altus-retail-demo/warehouse/departments';
 
 create database if not exists retaildb location 'adl://azureeastus2data.azuredatalakestore.net/altus-retail-demo/db';
+use retaildb;
 
 drop table if exists products;
 CREATE EXTERNAL TABLE products (product_id int, product_category_id int, product_name string, product_description string, product_price float, product_image string) 
